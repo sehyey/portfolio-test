@@ -1,0 +1,416 @@
+@charset "utf-8";
+
+/* 폰트 */
+/* 영어만 가능 */
+.knewave-regular {
+    font-family: "Knewave", system-ui;
+    font-weight: 400;
+    font-style: normal;
+  }
+/* 한글 가능 */
+@font-face {
+    font-family: 'Cafe24SsurroundAir';
+    src: url('https://gcore.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24SsurroundAir.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* 전체 영역 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Cafe24SsurroundAir';
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* section, .container 공통 */
+.container {
+    width: 1300px;
+    margin: 0 auto;
+}
+
+section {
+    width: 100%;
+    height: 100%;
+    padding: 10rem 0;
+    position: fixed;
+    top: 0; left: 0;
+    z-index: 8;
+}
+
+section .title {
+    margin-bottom: 3rem;
+}
+
+section .title h2 {
+    font-size: 3.5rem;
+    color: rgb(0, 102, 255);
+    font-family: "Knewave", system-ui;
+    text-align: center;
+}
+
+/* 배경 */
+.fixbg {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0; left: 0;
+    z-index: 1;
+}
+
+
+/* header 영역 */
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: transparent;
+    color: #fff;
+    z-index: 9;
+    padding: 1rem;
+}
+
+/* 자바 추가할 클래스 */
+header .container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+header.on {
+    background-color: #f8f8f8;
+    animation: fadein .5s;
+}
+
+@keyframes fadein {
+    from { opacity: 0;}
+    to {opacity: 1;}
+}
+
+header ul {
+    display: flex;
+}
+
+header ul li {
+    padding: 10px;
+}
+
+header button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color:#333;
+}
+
+header h1 button {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+header nav button {
+    font-size: 1.2rem;
+}
+
+/* main 영역 */
+
+#main {
+    width: 100%;
+    height: 100%;
+    background: url('../images/sky3.jpg') no-repeat center/cover;
+    text-align: center;
+    padding: 20rem;
+    color: #fff;
+}
+
+#main h1 {
+    font-size: 11rem;
+}
+
+#main .down {
+    background-color: transparent;
+    border: none;
+    font-size: 2rem;
+    color: #fff;
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: updown 1s infinite;
+}
+
+@keyframes updown {
+    0% {bottom: 1rem;}
+    50% {bottom: 1.5rem;}
+    100% {bottom: 1rem;}
+}
+
+
+/* about 영역 */
+.about-me::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+.about-me .left {
+    width: 47.5%;
+    height: 65vh;
+    margin-right: 5%;
+    float: left;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    background: url('../images/me-profile.png') no-repeat bottom left/cover;
+}
+
+.about-me .right{
+    float: left;
+    width: 47.5%;
+    height: 65vh;
+    padding: 2rem;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+}
+.about-me .right h3{
+    font-size: 2.3rem;
+    margin-bottom: 1rem;
+    color: rgb(71, 145, 255);
+}
+.about-me .right h3 strong{
+    color: rgb(0, 102, 255);
+}
+.about-me .right .content {
+    display: flex;
+}
+.about-me .right .content i {
+    font-size: 2rem;
+    margin-right: 5%;
+}
+.about-me .right p {
+    margin: 1.5rem 0;
+    font-size: 1.4rem;
+}
+.about-me .right .info-text .icon a{
+    font-size: 2rem;
+    margin-right: 0.3rem;
+}
+
+.about-me .right .info-text .icon {
+    display: flex;
+}
+
+.about-me .right .info-text .icon i{
+    font-size: 1.5rem;
+    margin-right: 1rem;
+}
+
+
+/* features 영역 */
+.features-me {
+    display: flex;
+}
+
+.features-me::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.features-me .features-inner{
+    background: url('../images/file-window-features-700px1100px.png') no-repeat 0 0/cover;
+    width: 30%;
+    padding: 2rem;
+    margin-right: 5%;
+    padding-bottom: 5%;
+    float: left;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+}
+
+.features-me .features-inner:last-child {
+    margin-right: 0;
+}
+.features-me .features-inner .content h3{
+    font-size: 2rem;
+    margin: 1rem 0 2rem;
+}
+
+.features-me .features-inner .icon{
+    font-size: 2.5rem;
+    color: rgb(71, 145, 255);
+    text-align: center;
+    margin-top: 5%;
+}
+
+.features-me .features-inner .content {
+    text-align: center;
+}
+
+.features-me .features-inner .content p {
+    font-size: 1.2rem;
+    margin-bottom: 5%;
+}
+
+.features-me .features-inner .content p:last-child {
+    margin-bottom: 0;
+}
+
+.features-me .features-inner .content .tool{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/* video 영역 */
+.video-pf .video-inner{
+    width: 48%;
+    margin: 0 auto;
+    margin-right: 4%;
+    margin-bottom: 3rem;
+    background: url('../images/file-window-video-700px-noline.png') no-repeat 0 0/cover;
+    padding: 6rem 2rem 2rem;
+    border: 2px solid #ccc;
+    border-radius: 16px;
+    text-align: left;
+    float: left;
+}
+
+.video-pf .video-inner:nth-child(2n) {
+    margin-right: 0%;
+}
+
+
+.video-pf .video-inner iframe {
+    width: 100%;
+    height: 300px;
+}
+
+.video-pf .video-inner strong {
+    color: rgb(71, 145, 255);
+    margin: 0.5rem 0;
+    display: block;
+}
+
+.video-pf .video-inner h3{
+    font-size: 1.8rem;
+}
+
+
+/* coding 영역 */
+.coding-pf .coding-inner{
+    width: 100%;
+    height: 90%;
+    margin-bottom: 3rem;
+    background-color: #fff;
+    padding: 5rem 2rem;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.coding-pf .coding-inner .left {
+    width: 35%;
+    
+}
+
+.coding-pf .coding-inner .left .content strong {
+    color: rgb(71, 145, 255);
+    margin: 0.5rem 0;
+    display: block;
+}
+
+.coding-pf .coding-inner .left .content h3 {
+    font-size: 1.8rem;
+}
+
+
+.coding-pf .coding-inner .right {
+    width: 65%;
+    display: flex;
+    margin: 3rem 0;
+}
+
+.coding-pf .coding-inner .right .mobile {
+    position: relative;
+    top: 50px;
+    left: 120px;
+}
+
+.coding-pf .coding-inner .right .mobile img {
+    z-index: 8;
+}
+
+.coding-pf .coding-inner .right .pc img {
+    width: 100%;
+}
+
+
+
+
+
+/* footer 영역 */
+footer {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    color: #fff;
+}
+
+#footer {
+    background: url('../images/sky6.jpg') no-repeat left top/cover;
+    padding: 20rem 0;
+}
+
+#footer h1 {
+    font-size: 3.5rem;
+    margin: 6rem 0;
+    letter-spacing: 3px;
+}
+
+#footer h1 span::after {
+    content: '';
+    display: inline-block;
+    width: 3px;
+    height: 40px;
+    background-color: #fff;
+    animation: cursor 0.7s infinite;
+    
+}
+
+@keyframes cursor {
+    0% {opacity: 1;}
+    100%{ opacity: 0;}
+}
+
+.gotop{
+    position: fixed;
+    bottom: 50px; right: 50px;
+    width: 40px;
+    height: 40px;
+    background-color:rgb(71, 145, 255);
+    display: none;
+    z-index: 9;
+    border: 2px solid #fff;
+    border-radius: 2px;
+}
+
+.gotop span{
+    position: absolute;
+    top: 16px; left: 14px;
+    width: 10px;
+    height: 10px;
+    border-top: 2px solid #fff;
+    border-left: 2px solid white;
+    transform: rotate(45deg);
+}
