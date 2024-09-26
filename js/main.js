@@ -1,39 +1,6 @@
-const headerEl = document.querySelector('header')
-
-window.addEventListener('scroll', function(){
-    this.requestAnimationFrame(sc)
-})
-
-function sc(){
-    let bs = window.scrollY
-    if(bs > 0){
-        headerEl.classList.add('on')
-    }else{
-        headerEl.classList.remove('on')
-    }
-}
-
-const animationmove = function(selector){
-    const targetEl = document.querySelector(selector)
-    const bs = window.scrollY
-    const targetscrollY = targetEl.getBoundingClientRect().top + bs
-    window.scrollTo({
-        top : targetscrollY, behavior : 'smooth'
-    })
-}
-
-const scrollmove = document.querySelectorAll('[data-animation-scroll="true"]')
-
-for(let i = 0; i < scrollmove.length; i++){
-    scrollmove[i].addEventListener('click', function(){
-        const target = this.dataset.target;
-        animationmove(target)
-    })
-}
-
 
 (function(){
-    const spanEl = document.querySelector('footer h1 span')
+    const spanEl = document.querySelector('#footer h1 span')
     const txt = ['Thank you for viewing my portfolio!']
 
     let index = 0;
@@ -65,6 +32,42 @@ for(let i = 0; i < scrollmove.length; i++){
             }
     }
 })()
+
+
+
+
+$(function(){
+    $('header ul .mainpage').click(function(){
+        $('html, body').stop().animate({
+            scrollTop: 0            
+        }, 600)
+    })
+
+})
+
+$(function(){
+    $('header ul .about').click(function(){
+        $('html, body').stop().animate({
+            scrollTop: 1000            
+        }, 600)
+    })
+})
+
+$(function(){
+    $('header ul .features').click(function(){
+        $('html, body').stop().animate({
+            scrollTop: 3000            
+        }, 600)
+    })
+})
+
+$(function(){
+    $('header ul .video').click(function(){
+        $('html, body').stop().animate({
+            scrollTop: 5000            
+        }, 600)
+    })
+})
 
 $(function () {
     $(window).scroll(function () {
